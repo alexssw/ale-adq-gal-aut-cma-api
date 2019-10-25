@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db:
+    image:  mariadb:10.4.8
+    restart:  always
+    container_name: mariadb
+    environment:
+      MYSQL_DATABASE: cmadb
+      MYSQL_USER: cmausr
+      MYSQL_PASSWORD: cmapwd
+      MYSQL_ROOT_PASSWORD: rootpwd
+    ports:
+    - "3306:3306"
+    expose:
+     - "3306"
+    volumes:
+      - cma-db:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/custom.cnf
+    network_mode: host
+
+volumes:
+  cma-db:
