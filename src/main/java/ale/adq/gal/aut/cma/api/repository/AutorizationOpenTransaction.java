@@ -1,6 +1,7 @@
 package ale.adq.gal.aut.cma.api.repository;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
 public class AutorizationOpenTransaction {
 
@@ -46,4 +48,16 @@ public class AutorizationOpenTransaction {
     @Column(name = "TRANSACTION_END_TIME")
     private LocalDateTime transactionEndTime;
 
+    @Column(name = "MTI_CODE")
+    private String mtiCode;
+
+    @Column(name = "POS_ENTRY_CODE")
+    private String posEntryCode;
+
+    private Double transactionValue;
+
+    public String getkey() {
+        String result = (this.getPsr() + "-" + this.getProduct() + "-" + this.getTypeCapture() + "=" + this.getMtiCode());
+        return result;
+    }
 }

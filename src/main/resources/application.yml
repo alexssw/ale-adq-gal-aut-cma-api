@@ -6,9 +6,12 @@ spring:
       enabled: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:oracle:thin:@db-aas-backoffice.casgizxa5ire.sa-east-1.rds.amazonaws.com:1521:AAS
-    username: admin
-    password: "#KNMYRKvZ>3)dWpt$"
+#    url: jdbc:oracle:thin:@db-aas-backoffice.casgizxa5ire.sa-east-1.rds.amazonaws.com:1521:AAS
+#    username: admin
+#    password: "#KNMYRKvZ>3)dWpt$"
+#    url: jdbc:oracle:thin:db-assw-backoffice.cs2d5mgh8qvm.us-east-1.rds.amazonaws.com:1521:assw
+#    username: admin
+#    password: DSyqoD80ICirn2cb8TDj
   jpa:
     show-sql: false
     properties:
