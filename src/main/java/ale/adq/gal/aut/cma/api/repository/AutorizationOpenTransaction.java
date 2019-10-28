@@ -1,12 +1,12 @@
 package ale.adq.gal.aut.cma.api.repository;
 
+import ale.adq.gal.aut.cma.api.model.util.LocalDateTimeConverter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
@@ -46,6 +46,7 @@ public class AutorizationOpenTransaction {
     private Boolean standIn;
 
     @Column(name = "TRANSACTION_END_TIME")
+    @Convert(converter = LocalDateTimeConverter.class)
     private LocalDateTime transactionEndTime;
 
     @Column(name = "MTI_CODE")

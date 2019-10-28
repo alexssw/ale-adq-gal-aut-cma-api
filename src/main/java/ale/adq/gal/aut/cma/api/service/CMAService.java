@@ -1,25 +1,23 @@
 package ale.adq.gal.aut.cma.api.service;
 
-import ale.adq.gal.aut.cma.api.model.TypeCaptureEnum;
 import ale.adq.gal.aut.cma.api.model.dto.*;
 import ale.adq.gal.aut.cma.api.repository.AutorizationOpenTransaction;
+import ale.adq.gal.aut.cma.api.repository.AutorizationOpenTransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 public class CMAService {
 
-//    @Autowired
-//    AutorizationOpenTransactionRepository repository;
+    @Autowired
+    AutorizationOpenTransactionRepository repository;
 
     public CMATriggeredTransactionDto getSummeryByTriggeredTransactions(
             LocalDateTime startPeriod, Long interval) {
@@ -27,10 +25,12 @@ public class CMAService {
         CMATriggeredTransactionDto triggeredTransactionDto = new CMATriggeredTransactionDto();
         AutorizationOpenTransaction transaction = null;
         final List<TransactionSummary> sumf = new ArrayList<>();
+
         LocalDateTime endDate = startPeriod.minus(interval, ChronoUnit.MINUTES);
 
-        //repository.searchByTriggeredTransaction(
-        // Date.valueOf(startPeriod.toLocalDate()),Date.valueOf(endDate.toLocalDate()));
+//        List<AutorizationOpenTransaction> transactions =
+//                repository.searchByTriggeredTransaction(Timestamp.valueOf(startPeriod), Timestamp.valueOf(endDate));
+
         List<AutorizationOpenTransaction> transactions = new ArrayList<>();
         transactions.addAll((new TransactionData()).geTriggeredTransactionData());
 
