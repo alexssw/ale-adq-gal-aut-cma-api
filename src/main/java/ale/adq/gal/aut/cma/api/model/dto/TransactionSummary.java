@@ -5,16 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PSRDto {
+public class TransactionSummary {
 
     private String name;
-    private List<ProductDto> products = new ArrayList<>();
+    private Long count;
+    private Double value;
 
 }

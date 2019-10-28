@@ -57,7 +57,7 @@ public class AutorizationOpenTransaction {
     private Double transactionValue;
 
     public String getkey() {
-        String result = (this.getPsr() + "-" + this.getProduct() + "-" + this.getTypeCapture() + "=" + this.getMtiCode());
+        String result = (this.getPsr() + "-" + this.getProduct() + "-" + this.getTypeCapture() + "-" + this.getMtiCode());
         return result;
     }
 }

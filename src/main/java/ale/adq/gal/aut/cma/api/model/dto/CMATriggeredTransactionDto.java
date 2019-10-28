@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,6 +17,6 @@ import java.util.List;
 public class CMATriggeredTransactionDto {
 
     private String origin;
-    private PSRDto psr;
+    private List<PSRDto> psrs = new ArrayList<>();
 
 }
