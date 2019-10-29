@@ -5,10 +5,13 @@ spring:
     restart:
       enabled: true
   datasource:
+    initialize: true
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:oracle:thin:@db-aas-backoffice.casgizxa5ire.sa-east-1.rds.amazonaws.com:1521:AAS
     username: admin
     password: "#KNMYRKvZ>3)dWpt$"
+    driver:
+      class-name: oracle.jdbc.driver.OracleDriver
   jpa:
     show-sql: false
     properties:
@@ -16,3 +19,12 @@ spring:
     database-platform: org.hibernate.dialect.Oracle12cDialect
     hibernate:
       ddl-auto: none
+  logging:
+    pattern:
+       console: %d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n
+    level: org.hibernate.SQL=debug
+
+oracle:
+  url:  jdbc:oracle:thin:@db-aas-backoffice.casgizxa5ire.sa-east-1.rds.amazonaws.com:1521:AAS
+  username: admin
+  password: "#KNMYRKvZ>3)dWpt$"

@@ -2,7 +2,6 @@ package ale.adq.gal.aut.cma.api.service;
 
 import ale.adq.gal.aut.cma.api.model.dto.*;
 import ale.adq.gal.aut.cma.api.repository.AutorizationOpenTransaction;
-import ale.adq.gal.aut.cma.api.repository.AutorizationOpenTransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +15,8 @@ import java.util.stream.Collectors;
 @Service
 public class CMAService {
 
-    @Autowired
-    AutorizationOpenTransactionRepository repository;
+//    @Autowired
+//    AutorizationOpenTransactionRepository repository;
 
     public CMATriggeredTransactionDto getSummeryByTriggeredTransactions(
             LocalDateTime startPeriod, Long interval) {

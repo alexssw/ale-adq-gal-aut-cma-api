@@ -52,8 +52,8 @@ public class AutorizationOpenTransaction {
     @Column(name = "MTI_CODE")
     private String mtiCode;
 
-    @Column(name = "POS_ENTRY_CODE")
-    private String posEntryCode;
+//    @Column(name = "POS_ENTRY_CODE")
+//    private String posEntryCode;
 
     private Double transactionValue;
 
